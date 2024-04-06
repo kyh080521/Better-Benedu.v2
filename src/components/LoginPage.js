@@ -1,6 +1,13 @@
 import React, {useState} from "react";
 import styles from '../style/loginPage.module.css';
 
+function loginClick() {
+    let loginButton = document.querySelector('#loginButton');
+
+
+}
+
+
 function login(){
     console.log("login 함수")
     let username = document.querySelector('#email').value;
@@ -35,8 +42,10 @@ const LoginPage = () => {
 
                 <div className={styles.logoContainer}>
                     <div>
+                       
                         <img style={{ width : '120px', left : '120px'}} //베네듀 로고
-                                src="https://i.ibb.co/kHB3t3s/2024-03-27benedu-logo.png" alt="2024-03-27benedu-logo" border="0" />  
+                                src="https://i.ibb.co/8MpJHCQ/Kakao-Talk-20240404-103053687.jpg" alt="2024-03-27benedu-logo" border="0" />
+                        
                     </div>
                     <div style={{marginTop:'20px'}}> 
                             <img  //BENEDU 베너
@@ -73,7 +82,7 @@ const LoginPage = () => {
                     <div className={styles.loginButtonContainer}>
 
                         <div className={styles.buttonLoginContainer}>
-                            <button className={styles.loginButton} name="" onClick={handleLogin}>로그인</button>
+                            <button className={styles.loginButton} id="loginButton" name="" onClick={handleLogin}>로그인</button>
                         </div>
 
                         <div className={styles.buttonFindPWContainer}>
