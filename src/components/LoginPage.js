@@ -1,8 +1,24 @@
 import React, {useState} from "react";
 import styles from '../style/loginPage.module.css';
 
-function loginClick() {
-    let loginButton = document.querySelector('#loginButton');
+const items = [
+    {
+        title : '학생'
+    },
+    {
+        title : '학부모'
+    },
+    {
+        title : '교사'
+    },
+    
+
+];
+
+function statusClick() {
+    const loginButton = document.querySelector('#loginButton');
+    const parentButton = document.querySelector('#parentButton');
+    const teacherButton = document.querySelector('#teacherButton');
 
 
 }
@@ -31,42 +47,51 @@ function login(){
 }
 
 const LoginPage = () => {
-    const [userState, setUserState] = useState();
+    const [userState, setUserState] = useState('학생');
 
     const handleLogin = () => {
         login(); // 로그인 함수 호출
     };
+
+    const statusChange = () => {
+        statusClick();
+    };
+
     return (
-        <div className={styles.loginPage}>
-            <div className={styles.container}>
+        <div className={styles.loginPage} style = {{ backgroundImage: `url("https://i.ibb.co/y63WZdv/image.jpg")`}}>
+            <div className={styles.container} style = {{ backgroundImage: `url("https://i.ibb.co/rwyqKdt/hex.png")`}}>
 
                 <div className={styles.logoContainer}>
                     <div>
                        
-                        <img style={{ width : '120px', left : '120px'}} //베네듀 로고
+                        <img style={{ width : '80px', left : '80px'}} //베네듀 로고
                                 src="https://i.ibb.co/kHB3t3s/2024-03-27benedu-logo.png" alt="2024-03-27benedu-logo" border="0" />
                         
                     </div>
-                    <div style={{marginTop:'20px'}}> 
-                            <img  //BENEDU 베너
-                                src="https://i.ibb.co/Js7sb3j/2024-03-26-145248.png"  alt="2024-03-26-145248" border="0" /> 
+                    <div> 
+                            <img  style={{ width : '320px', left : '160px' }} //BENEDU 베너
+                                    src="https://i.ibb.co/s2qXGYY/image.png"  alt="2024-03-26-145248" border="0" /> 
 
                     </div>
                 </div>
                 <div className={styles.functionContainer}>
                     <div className={styles.userStateContainer}>
-
-                        <button className={styles.userStateButton} >학생</button>
-                        <button className={styles.userStateButton}>학부모</button>
-                        <button className={styles.userStateButton}>교사</button>
-                        
+                        {items.map((item, index) => 
+                            <button 
+                                key = {index}
+                                className={styles.userStateButton} 
+                                onClick={statusChange}
+                            >
+                                {item.title}
+                            </button>
+                        )}
                     </div>
 
                     <form className={styles.userFormContainer} name="id_form" method="post" acceptCharset="utf-8">
 
                         <div style={{ marginBottom: '20px' }}>
                             <fieldset className={styles.userForm}>
-                                <input type="text" id="email"className={styles.hintMessage} placeholder="이메일을 입력해주세요" />
+                                <input type="text" id="email" className={styles.hintMessage} placeholder="이메일을 입력해주세요" />
                             </fieldset>
                         </div>
 

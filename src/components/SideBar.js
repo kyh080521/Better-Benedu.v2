@@ -20,7 +20,7 @@ const Sidebar = ({ width = 10, children }) => {
 
     // 사이드바 외부 클릭시 닫히는 함수
     const handleClose = async e => {
-        let sideArea = side.current;
+        let sideArea = side.current; 
         let sideCildren = side.current.contains(e.target);
         if (isOpen && (!sideArea || !sideCildren)) {
             await setX(-width);
