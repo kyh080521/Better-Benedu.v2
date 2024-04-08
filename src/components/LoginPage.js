@@ -44,7 +44,7 @@ const LoginPage = () => {
                     <div>
                        
                         <img style={{ width : '120px', left : '120px'}} //베네듀 로고
-                                src="https://i.ibb.co/8MpJHCQ/Kakao-Talk-20240404-103053687.jpg" alt="2024-03-27benedu-logo" border="0" />
+                                src="https://i.ibb.co/kHB3t3s/2024-03-27benedu-logo.png" alt="2024-03-27benedu-logo" border="0" />
                         
                     </div>
                     <div style={{marginTop:'20px'}}> 
